@@ -1,2 +1,8 @@
+<<<<<<< HEAD
 /nbproject
 ./assets
+=======
+/nbproject/private/
+assets
+protected/runtime
+>>>>>>> df83a36a8ca3e937144857ebc29445ff6aa9275e
