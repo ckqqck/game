@@ -46,6 +46,15 @@ body
 	float: left;
 	background: url('../images/gazon.jpg');
 }
+.square2
+{
+	border: 1px solid black;
+	width: 25px;
+	height: 25px;
+	float: left;
+	background: url('../images/beton.jpg');
+	border: 1px solid red;
+}
 
 .store
 {

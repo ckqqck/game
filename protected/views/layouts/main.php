@@ -16,6 +16,26 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
+
+	<script src="<?php echo Yii::app()->request->baseUrl; ?>/assets/jquery-1.8.2.js"></script>
+	<script src="<?php echo Yii::app()->request->baseUrl; ?>/assets/jquery-ui-1.9.0.custom.js"></script>
+	<script>
+	 $(function() {
+	        $( "#draggable" ).draggable({ 
+	                    revert: "valid",
+            		helper: "clone" 
+            	});
+	 
+	        $( ".square" ).droppable({
+	            activeClass: "ui-state-hover",
+	            hoverClass: "ui-state-active",
+	            drop: function( event, ui ) {
+	                 	$( this ).find( ".placeholder" ).remove();
+               		$( '<div class="square2"></div>' ).text( ui.draggable.text() ).appendTo( this );
+	            }
+	        });
+	    });
+    	</script>
 </head>
 
 <body>
@@ -31,6 +51,8 @@
 			<li>STORE</li>
 		</ul>
 		</div>
+		<div id="draggable" class="square2"></div>
+
 		<div class="maps">
 			<?php for ($x = 0; $x < 27; $x++) 
 			{ 	
