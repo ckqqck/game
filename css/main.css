@@ -30,12 +30,30 @@ body
 
 .maps
 {
-	width: 740px;
-	height: 450px;
+	width: 730px;
+	height: 470px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 10px;
 	border: 1px solid green;
+}
+
+.square 
+{
+	border: 1px solid black;
+	width: 25px;
+	height: 25px;
+	float: left;
+	background: url('../images/gazon.jpg');
+}
+
+.store
+{
+	width: 740px;
+	height: 200px;
+	display:none;
+	border: 1px solid green;
+	margin-top: 250px;
 }
 
 .notification 
@@ -45,7 +63,6 @@ body
 	border: 1px solid blue;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 15px;
 }
 
 #page

@@ -19,14 +19,29 @@
 </head>
 
 <body>
-	<div class="header">
+	<div class="header">		
 	</div>
 	<div class="wrapper">
 		<div class="menu">
+			<ul>
+			<li>LOOPS</li>
+			<li>TICKET D'OR</li>
+			<li>JAUGE</li>
+			<li>ACHAT</li>
+			<li>STORE</li>
+		</ul>
 		</div>
 		<div class="maps">
-		</div>
+			<?php for ($x = 0; $x < 27; $x++) 
+			{ 	
+				for ($y = 0; $y < 18; $y++)
+				{
+					echo '<div class="square"></div>';
+				}					
+			}
+			?>
 		<div class="notification">
+			<p>NOTIFICATION</p>
 		</div>
 	</div>
 </body>
