@@ -1,9 +1,5 @@
 <?php 
-
 require( 'protected/views/layouts/bdd.php' );
-
-require( 'protected/views/layouts/get_item.php' );
-
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -28,19 +24,22 @@ require( 'protected/views/layouts/get_item.php' );
 	<script src="<?php echo Yii::app()->request->baseUrl; ?>/jquery/jquery-ui-1.9.0.custom.js"></script>
 	<script>
 	 $(function() {
-	        $( "#draggable" ).draggable({ 
+	        $( ".drag-item" ).draggable({ 
 	                    revert: "valid",
             		    helper: "clone",
             	 drag: function( event, ui ) {
-            	 	$(".store").slideUp();
+            	 	//$(".store").slideUp();
 	            }
 	         });
 	 
 	        $( ".square" ).droppable({	           
 	            hoverClass: "ui-state-active",
 	            drop: function( event, ui ) {
-	                 	$( this ).find( ".placeholder" ).remove();
-               		$( '<div class="roue"></div>' ).text( ui.draggable.text() ).appendTo( this );
+                	$( this ).find( ".placeholder" ).remove();
+
+                	$( this ).empty();
+                	item = ui.draggable.attr('data-item');
+                	$( '<div class="square-'+ item +'"></div>').appendTo( this );
 	            }
 	        });
 	    });
@@ -76,14 +75,22 @@ require( 'protected/views/layouts/get_item.php' );
 	<div class="header">		
 	</div>
 	<div class="wrapper">
-		<div class="menu">			
+		<div class="menu">
+			<button class="show">STORE</button>	
 			<ul>
-				<li><button class="show">LOOPS</button></li>
-				<li><button class="show">TICKET D'OR</button></li>
-				<li><button class="show">JAUGE</button></li>
-				<li><button class="show">ACHAT</button></li>
-				<li><button class="show">STORE</button></li>
-			</ul>
+				<li>
+					<?php echo $user_info->money; ?><img src="images/loops.png" />
+				</li>
+				<li>
+					<?php echo $user_info->golden_ticket; ?><img src="images/ticket_dor.png" />
+				</li>
+				<li>
+					<?php echo $user_info->level; ?><img src="images/level.png" />
+				</li>				
+				<li>
+					<?php echo $user_info->total_visit; ?><img src="images/people.png" />
+				</li>
+			</ul>					
 		</div>
 		<div class="maps">
 		<div class="store">
@@ -94,23 +101,17 @@ require( 'protected/views/layouts/get_item.php' );
 				<li><a href="#tabs-3">Decors</a></li>
 				<li><a href="#tabs-4">Sols</a></li>
 			</ul>
-			<div id="tabs-1">
-				<div class="item">
-					<div id="draggable" class="roue"></div>
-					<span>5000$</span>
-					<button id="opener">Open Dialog</button>
-					<div class="dialog" title="Basic dialog"
-    <p>This is an animated dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
-</div>				
-				</div>
-				<br /><br /><br /><br />
+			<div id="tabs-1">				
+				<?php require( 'protected/views/layouts/get_item.php' ); ?>
+				<div class="square"></div>
+			<br /><br /><br />
 			</div>
 			<div id="tabs-2">
 			</div>
 			<div id="tabs-3">
 			</div>
 			</div>
-		</div>		
+		</div>	
 			<?php 
 				while ( $row = $map_info->fetch_object() )  
 				{

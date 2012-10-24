@@ -46,13 +46,8 @@ body
 .menu li
 {
 	display: inline;
-	margin-left: 50px;
+	margin-left: 90px;
 	font-size: 20px;
-}
-
-.menu ul 
-{
-	margin-top: 30px;
 }
 
 .store li
@@ -199,6 +194,7 @@ label
 {
 	display: inline;
 }
+
 
 #mainmenu ul li a
 {
