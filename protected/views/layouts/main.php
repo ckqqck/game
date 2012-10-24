@@ -31,40 +31,67 @@
 	            hoverClass: "ui-state-active",
 	            drop: function( event, ui ) {
 	                 	$( this ).find( ".placeholder" ).remove();
-               		$( '<div class="square2"></div>' ).text( ui.draggable.text() ).appendTo( this );
+               		$( '<div class="roue"></div>' ).text( ui.draggable.text() ).appendTo( this );
 	            }
 	        });
 	    });
-    	</script>
+	$(document).ready(function(){
+  		$(".hide2").click(function(){
+   		$(".store").hide();
+  	});
+	 	$(".show").click(function(){
+	    $(".store").show();
+ 	});
+	 	$(".batiments").click(function(){
+	    $(".batiments").show();
+	});
+	});
+    </script>
 </head>
 
 <body>
 	<div class="header">		
 	</div>
 	<div class="wrapper">
-		<div class="menu">
+		<div class="menu">			
 			<ul>
-			<li>LOOPS</li>
-			<li>TICKET D'OR</li>
-			<li>JAUGE</li>
-			<li>ACHAT</li>
-			<li>STORE</li>
-		</ul>
+				<li><button class="show">LOOPS</button></li>
+				<li><button class="show">TICKET D'OR</button></li>
+				<li><button class="show">JAUGE</button></li>
+				<li><button class="show">ACHAT</button></li>
+				<li><button class="show">STORE</button></li>
+			</ul>
 		</div>
-		<div id="draggable" class="square2"></div>
-
 		<div class="maps">
-			<?php for ($x = 0; $x < 27; $x++) 
-			{ 	
-				for ($y = 0; $y < 18; $y++)
-				{
-					echo '<div class="square"></div>';
-				}					
-			}
-			?>
-		<div class="notification">
-			<p>NOTIFICATION</p>
+		<div class="store">
+			<button class="hide2">Fermer</button>
+			<ul>
+				<li class="attraction">Attractions</li>
+				<li class="batiments">Batiments</li>
+				<li class="decors">Decors</li>
+			</ul>
+			<div class="attraction">
+				<a href="#"><div id="draggable" class="roue">
+				</div></a>
+			</div>
+			<div class="batiments">
+				coucou
+			</div>
+			<div id="decors">
+			</div>			
+		</div>			
+			<?php for ($y = 0; $y < 9; $y++) 
+				{ 	
+					for ($x = 0; $x < 14; $x++)
+					{
+						echo '<a href="#"><div class="square"></div></a>';
+					}					
+				}
+			?>			
 		</div>
+	<div class="notification">
+			<p>NOTIFICATION</p>
 	</div>
+    </div>
 </body>
 </html>
