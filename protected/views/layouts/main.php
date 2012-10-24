@@ -1,4 +1,10 @@
-<?php /* @var $this Controller */ ?>
+<?php 
+
+require( 'protected/views/layouts/bdd.php' );
+
+require( 'protected/views/layouts/get_item.php' );
+
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -104,13 +110,14 @@
 			<div id="tabs-3">
 			</div>
 			</div>
-		</div>			
-			<?php for ($y = 0; $y < 9; $y++) 
-				{ 	
-					for ($x = 0; $x < 14; $x++)
-					{
-						echo '<div class="square"></div>';
-					}					
+		</div>		
+			<?php 
+				while ( $row = $map_info->fetch_object() )  
+				{
+					echo 
+					'<div class="item item-bg">
+						<div class="item-'. $row->id_item .'" data-x="'. $row->chunk_x .'" data-y="'. $row->chunk_y .'"></div>
+					</div>';
 				}
 			?>			
 		</div>
