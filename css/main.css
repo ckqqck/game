@@ -29,6 +29,7 @@ body
 .wrapper
 {	
 	width: 1200px;
+	height: 730px;
 	margin: 100px auto 0 auto;
 	border: 2px solid black;
 }
@@ -44,26 +45,23 @@ body
 /************ ingame **************/
 .menu 
 {
-	height: 80px;	
+	height: 80px;
+	background-color: grey;	
 }
 .menu li
 {
 	display: inline;
-	margin-left: 50px;
+	margin-left: 150px;
 	font-size: 20px;
 }
-
-.menu ul 
-{
-	margin-top: 30px;
-}
-
 
 	/*** Map **/
 	#map{
 	    text-align:center;
 	    overflow:hidden;
 	    width: 1200px;
+	    height: 650px;
+	    background: url('../images/gazon1.png');
 	}
 	#map_inner{
 	    width: 1200px;
@@ -106,18 +104,15 @@ body
 	font-size: 20px;
 	color : white;
 }
-.store ul 
-{
-	margin-top: 30px;
-}
 
 .store
 {
-	width: 730px;
+	width: 1200px;
 	height: 150px;
 	background-color: grey;
 	position: absolute;
-	bottom: 142px;
+	z-index: 100;
+	top: 720px;
 	display: none;
 }
 
