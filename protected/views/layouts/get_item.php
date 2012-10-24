@@ -34,8 +34,8 @@ if( $items->num_rows ){
 		}
 
 		echo 
-		'<div class="item '. $locked .'">
-			<div class="item-'. $item->id_item .'" data-lenghtx="'. $item->item_x .'" data-lenghty="'. $item->item_y .'"></div>
+		'<div class="square '. $locked .'">
+			<div class="square-'. $item->id_item .'" data-lenghtx="'. $item->item_x .'" data-lenghty="'. $item->item_y .'"></div>
 		</div>';
 	}
 }

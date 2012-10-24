@@ -24,8 +24,8 @@ require( 'protected/views/layouts/get_item.php' );
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 
-	<script src="<?php echo Yii::app()->request->baseUrl; ?>/assets/jquery-1.8.2.js"></script>
-	<script src="<?php echo Yii::app()->request->baseUrl; ?>/assets/jquery-ui-1.9.0.custom.js"></script>
+	<script src="<?php echo Yii::app()->request->baseUrl; ?>/jquery/jquery-1.8.2.js"></script>
+	<script src="<?php echo Yii::app()->request->baseUrl; ?>/jquery/jquery-ui-1.9.0.custom.js"></script>
 	<script>
 	 $(function() {
 	        $( "#draggable" ).draggable({ 
@@ -115,8 +115,8 @@ require( 'protected/views/layouts/get_item.php' );
 				while ( $row = $map_info->fetch_object() )  
 				{
 					echo 
-					'<div class="item item-bg">
-						<div class="item-'. $row->id_item .'" data-x="'. $row->chunk_x .'" data-y="'. $row->chunk_y .'"></div>
+					'<div class="square square-bg">
+						<div class="square-'. $row->id_item .'" data-x="'. $row->chunk_x .'" data-y="'. $row->chunk_y .'"></div>
 					</div>';
 				}
 			?>			

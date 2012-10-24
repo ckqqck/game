@@ -2,7 +2,7 @@
 
 $host		= '127.0.0.1';
 $user		= 'root';
-$password	= 'anbazin';
+$password	= '';
 $bdd 		= 'coaster';
 
 
@@ -60,11 +60,11 @@ $quest_query =
 $quest_info = $link->query( $quest_query );
 
 ?>
-<pre>
+<!-- <pre>
 <?php
 	print_r( $user_info );
 	print_r( $bonus_info );
 	print_r( $quest_info );
 	print_r( $map_info );
 ?>
-</pre>
+</pre> -->
