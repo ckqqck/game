@@ -2,7 +2,7 @@
 
 $host		= '127.0.0.1';
 $user		= 'root';
-$password	= 'anbazin';
+$password	= '';
 $bdd 		= 'coaster';
 
 
@@ -59,6 +59,11 @@ $quest_query =
 
 $quest_info = $link->query( $quest_query );
 
+$map_final = new stdClass;
+while ( $row = $map_info->fetch_object() )  
+{
+	$map_final->{$row->chunk_x.'-'.$row->chunk_y} = $row;
+}
 ?>
 <!-- <pre>
 <?php

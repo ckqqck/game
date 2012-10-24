@@ -7,7 +7,7 @@ $real_type = array( 'carousel', 'shop', 'decoration', 'flooring' );
 
 if( in_array( $type, $real_type ) ){
 	$items = $link->query( 
-	            'SELECT i.*, ui.id_user
+	                      'SELECT i.*, ui.id_user
 				FROM `item` AS i
 				LEFT JOIN `user_item` AS ui ON ui.id_item = i.id_item
 				WHERE i.type = "'. $type .'" && ( id_user = "'. $user_info->id_user .'" OR id_user IS NULL )
@@ -35,7 +35,7 @@ if( $items->num_rows ){
 
 		echo 
 		'<div class="square '. $locked .'">
-			<div class="drag-item square-'. $item->id_item .'" data-item="'. $item->id_item .'" data-lenghtx="'. $item->item_x .'" data-lenghty="'. $item->item_y .'">aaa</div>
+			<div class="drag-item square-'. $item->id_item .'" data-item="'. $item->id_item .'" data-lenghtx="'. $item->item_x .'" data-lenghty="'. $item->item_y .'"></div>
 		</div>';
 	}
 }

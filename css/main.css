@@ -10,6 +10,15 @@ pre{margin:5px auto;width:990px;padding:8px 35px 8px 14px;margin-bottom:18px;bac
 pre h2{font-size: 120%;font-weight: bold;}
 pre.error{background-color:#fcf8e3;border:1px solid #fbeed5;color:#c09853;}
 
+
+/************ facebook ******************/
+.header 
+{
+	height: 38px;
+	background-color: #3B5998;
+}
+
+/************ main ******************/
 body
 {
 	padding: 0;
@@ -17,39 +26,79 @@ body
 	font: normal 10pt Arial,Helvetica,sans-serif;
 	background: white;
 }
-
-.item
+.wrapper
+{	
+	width: 1200px;
+	margin: 100px auto 0 auto;
+	border: 2px solid black;
+}
+.dialog
 {
-	width: 60px;
-	height: 80px;
-	border: 1px solid black;
-	padding : 10px;
+	display:none;
+}
+.clear{
+	clear:both;
 }
 
-.store button
-{
-	position: absolute;
-	right: 0;
-}
 
-.batiments
+/************ ingame **************/
+.menu 
 {
-	display: none;
+	height: 80px;	
 }
-
-.header 
-{
-	height: 38px;
-	background-color: #3B5998;
-}
-
 .menu li
 {
 	display: inline;
-	margin-left: 90px;
+	margin-left: 50px;
 	font-size: 20px;
 }
 
+.menu ul 
+{
+	margin-top: 30px;
+}
+
+
+	/*** Map **/
+	#map{
+	    text-align:center;
+	    overflow:hidden;
+	    width: 1200px;
+	}
+	#map_inner{
+	    width: 1200px;
+	    -webkit-transform: rotateX(60deg) rotateZ(45deg);
+	    
+	}
+	.square-line{
+	    height:34px;
+	    clear:both;
+	}
+	.square-bg
+	{
+		width: 50px;
+		height: 50px;
+		float: left;
+		background: url('../images/gazon.jpg');
+	}
+	.square, .square > div 
+	{
+		width: 50px;
+		height: 50px;
+		float: left;
+	}
+	.square-1{ background: url('../images/grasscubeag6.jpg'); }
+	.square-2{ background: url('../images/manege.png'); }
+	.square-3{ background: url('../images/hotdog.png'); }
+	.square-4{ background: url('../images/beton.jpg'); }
+	.square-5{ background: url('../images/roue.png'); }
+
+	.locked{
+		border: 1px solid red;
+	}
+
+
+/************ store ******************/
 .store li
 {
 	display: inline;
@@ -57,16 +106,9 @@ body
 	font-size: 20px;
 	color : white;
 }
-
 .store ul 
 {
 	margin-top: 30px;
-}
-
-label
-{
-    display: inline-block;
-    width: 5em;
 }
 
 .store
@@ -79,284 +121,15 @@ label
 	display: none;
 }
 
-.wrapper
-{	
-	width: 760px;
-	height: 620px;
-	margin-top: 100px;
-	margin-left: auto;
-	margin-right: auto;
-	border: 2px solid black;
-}
-
-.menu 
+.item
 {
-	border:1px solid red;
-	height: 80px;	
-}
-
-.maps
-{
-	width: 730px;
-	height: 470px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 10px;
-	border: 1px solid green;
-}
-
-
-.square-bg
-{
+	width: 60px;
+	height: 80px;
 	border: 1px solid black;
-	width: 50px;
-	height: 50px;
-	float: left;
-	background: url('../images/gazon.jpg');
+	padding : 10px;
 }
-.square, .square > div 
+.store button
 {
-	border: 1px solid black;
-	width: 50px;
-	height: 50px;
-	float: left;
-}
-.square-1{ background: url('../images/gazon.jpg'); }
-.square-2{ background: url('../images/manege.png'); }
-.square-3{ background: url('../images/hotdog.png'); }
-.square-4{ background: url('../images/beton.png'); }
-.square-5{ background: url('../images/roue.png'); }
-
-.locked{
-	border: 1px solid red;
-}
-.notification 
-{
-	width: 600px;
-	height: 60px;
-	border: 1px solid blue;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-#page
-{
-	margin-top: 5px;
-	margin-bottom: 5px;
-	background: white;
-	border: 1px solid #C9E0ED;
-}
-
-#header
-{
-	margin: 0;
-	padding: 0;
-	border-top: 3px solid #C9E0ED;
-}
-
-#content
-{
-    padding: 20px;
-}
-
-#sidebar
-{
-	padding: 20px 20px 20px 0;
-}
-
-#footer
-{
-	padding: 10px;
-	margin: 10px 20px;
-	font-size: 0.8em;
-	text-align: center;
-	border-top: 1px solid #C9E0ED;
-}
-
-#logo
-{
-	padding: 10px 20px;
-	font-size: 200%;
-}
-
-#mainmenu
-{
-	background:white url(bg.gif) repeat-x left top;
-}
-
-#mainmenu ul
-{
-	padding:6px 20px 5px 20px;
-	margin:0px;
-}
-
-#mainmenu ul li
-{
-	display: inline;
-}
-
-
-#mainmenu ul li a
-{
-	color:#ffffff;
-	background-color:transparent;
-	font-size:12px;
-	font-weight:bold;
-	text-decoration:none;
-	padding:5px 8px;
-}
-
-#mainmenu ul li a:hover, #mainmenu ul li.active a
-{
-	color: #6399cd;
-	background-color:#EFF4FA;
-	text-decoration:none;
-}
-
-div.flash-error, div.flash-notice, div.flash-success
-{
-	padding:.8em;
-	margin-bottom:1em;
-	border:2px solid #ddd;
-}
-
-div.flash-error
-{
-	background:#FBE3E4;
-	color:#8a1f11;
-	border-color:#FBC2C4;
-}
-
-div.flash-notice
-{
-	background:#FFF6BF;
-	color:#514721;
-	border-color:#FFD324;
-}
-
-div.flash-success
-{
-	background:#E6EFC2;
-	color:#264409;
-	border-color:#C6D880;
-}
-
-div.flash-error a
-{
-	color:#8a1f11;
-}
-
-div.flash-notice a
-{
-	color:#514721;
-}
-
-div.flash-success a
-{
-	color:#264409;
-}
-
-div.form .rememberMe label
-{
-	display: inline;
-}
-
-div.view
-{
-	padding: 10px;
-	margin: 10px 0;
-	border: 1px solid #C9E0ED;
-}
-
-div.breadcrumbs
-{
-	font-size: 0.9em;
-	padding: 5px 20px;
-}
-
-div.breadcrumbs span
-{
-	font-weight: bold;
-}
-
-div.search-form
-{
-	padding: 10px;
-	margin: 10px 0;
-	background: #eee;
-}
-
-.dialog
-{
-	display:none;
-}
-
-.portlet-decoration
-{
-	padding: 3px 8px;
-	background: #B7D6E7;
-	border-left: 5px solid #6FACCF;
-}
-
-.portlet-title
-{
-	font-size: 12px;
-	font-weight: bold;
-	padding: 0;
-	margin: 0;
-	color: #298dcd;
-}
-
-.portlet-content
-{
-	font-size:0.9em;
-	margin: 0 0 15px 0;
-	padding: 5px 8px;
-	background:#EFFDFF;
-}
-
-.portlet-content ul
-{
-	list-style-image:none;
-	list-style-position:outside;
-	list-style-type:none;
-	margin: 0;
-	padding: 0;
-}
-
-.portlet-content li
-{
-	padding: 2px 0 4px 0px;
-}
-
-.operations
-{
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-}
-
-.operations li
-{
-	padding-bottom: 2px;
-}
-
-.operations li a
-{
-	font: bold 12px Arial;
-	color: #0066A4;
-	display: block;
-	padding: 2px 0 2px 8px;
-	line-height: 15px;
-	text-decoration: none;
-}
-
-.operations li a:visited
-{
-	color: #0066A4;
-}
-
-.operations li a:hover
-{
-	background: #80CFFF;
+	position: absolute;
+	right: 0;
 }
