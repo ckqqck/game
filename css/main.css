@@ -6,6 +6,14 @@ body
 	background: white;
 }
 
+.item
+{
+	width: 60px;
+	height: 80px;
+	border: 1px solid black;
+	padding : 10px;
+}
+
 .store button
 {
 	position: absolute;
@@ -48,10 +56,16 @@ body
 	margin-top: 30px;
 }
 
+label
+{
+    display: inline-block;
+    width: 5em;
+}
+
 .store
 {
 	width: 730px;
-	height: 200px;
+	height: 150px;
 	background-color: grey;
 	position: absolute;
 	bottom: 142px;
@@ -256,9 +270,9 @@ div.search-form
 	background: #eee;
 }
 
-.portlet
+.dialog
 {
-
+	display:none;
 }
 
 .portlet-decoration

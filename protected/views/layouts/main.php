@@ -12,8 +12,9 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/ie.css" media="screen, projection" />
 	<![endif]-->
 
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/jquery-ui-1.9.0.custom.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 
@@ -23,11 +24,13 @@
 	 $(function() {
 	        $( "#draggable" ).draggable({ 
 	                    revert: "valid",
-            		helper: "clone" 
-            	});
+            		    helper: "clone",
+            	 drag: function( event, ui ) {
+            	 	$(".store").slideUp();
+	            }
+	         });
 	 
-	        $( ".square" ).droppable({
-	            activeClass: "ui-state-hover",
+	        $( ".square" ).droppable({	           
 	            hoverClass: "ui-state-active",
 	            drop: function( event, ui ) {
 	                 	$( this ).find( ".placeholder" ).remove();
@@ -46,9 +49,23 @@
 	    $(".batiments").show();
 	});
 	});
-    </script>
+	// tabs for store
+	 $(function() {
+        $( "#tabs" ).tabs();
+    });	
+	// dialogs for items
+	 $(function() {
+        $( ".dialog" ).click(
+        	function()
+         {
+       		 $( ".dialog" ).dialog({
+       		 	show: "blind",
+            	hide: "explode"
+       		 });
+    	});
+    });
+	 </script>
 </head>
-
 <body>
 	<div class="header">		
 	</div>
@@ -64,34 +81,42 @@
 		</div>
 		<div class="maps">
 		<div class="store">
-			<button class="hide2">Fermer</button>
+			<div id="tabs">
 			<ul>
-				<li class="attraction">Attractions</li>
-				<li class="batiments">Batiments</li>
-				<li class="decors">Decors</li>
+				<li><a href="#tabs-1">Attractions</a></li>
+				<li><a href="#tabs-2">Batiments</a></li>
+				<li><a href="#tabs-3">Decors</a></li>
+				<li><a href="#tabs-4">Sols</a></li>
 			</ul>
-			<div class="attraction">
-				<a href="#"><div id="draggable" class="roue">
-				</div></a>
+			<div id="tabs-1">
+				<div class="item">
+					<div id="draggable" class="roue"></div>
+					<span>5000$</span>
+					<button id="opener">Open Dialog</button>
+					<div class="dialog" title="Basic dialog"
+    <p>This is an animated dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+</div>				
+				</div>
+				<br /><br /><br /><br />
 			</div>
-			<div class="batiments">
-				coucou
+			<div id="tabs-2">
 			</div>
-			<div id="decors">
-			</div>			
+			<div id="tabs-3">
+			</div>
+			</div>
 		</div>			
 			<?php for ($y = 0; $y < 9; $y++) 
 				{ 	
 					for ($x = 0; $x < 14; $x++)
 					{
-						echo '<a href="#"><div class="square"></div></a>';
+						echo '<div class="square"></div>';
 					}					
 				}
 			?>			
 		</div>
-	<div class="notification">
-			<p>NOTIFICATION</p>
-	</div>
+		<div class="notification">
+				<p>NOTIFICATION</p>
+		</div>
     </div>
 </body>
 </html>
